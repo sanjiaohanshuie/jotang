@@ -1,0 +1,31 @@
+$ git checkout -b dev 创建分支并切换指针
+$ git switch -c dev  更科学且易懂的方法,创建并切换
+$ git switch master 切换
+或者用这两行代码 $ git branch dev
+                $ git checkout dev
+$ git merge dev 快速合并
+$ git branch -d dev 删除指针
+$ git branch 查看当前分支
+$ git log --graph --pretty=oneline --abbrev-commit 查看修改历史
+$ git merge --no-ff -m "merge with no-ff" dev使用no-ff合并，可看到历史
+$ git stash储存工作现场
+$ git stash list 查看储存
+$ git stash pop = $ git stash apply + $ git stash drop
+$ git cherry-pick 4c805e2(在master上修改bug的版本号)将在master上修改的bug复制到dev上
+$ git branch -d feature-vulcan 强行删除分支
+$ git push origin master 推送分支
+$ git pull把最新提交抓取下来
+$ git branch --set-upstream-to=origin/dev dev   将本地dev与远端origin/dev链接在一起
+$ git remote -v查看远端库信息
+$ git rebase变基操作，将未push的分支结构转化成一条直线
+$ git tag v0.9 f52c633 将历史文件创建标签
+$ git log --pretty=oneline --abbrev-commit很常用的查看当前分支历史的指令
+$ git show v0.9查看标签信息
+$ git tag -a v0.1 -m "version 0.1 released" 1094adb 创建带说明的标签
+$ git tag -d v0.1删除标签
+$ git push origin v1.0 推送标签
+$ git push origin --tags一次性推送所有标签
+$ git tag -d v0.9  $ git push origin :refs/tags/v0.9 删除远程标签
+$ git config --global alias.st status修改全局参数使指令简化（status变成st）
+$ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"  
+$ cat .git/config查看仓库配置文件 想删除的话直接删掉

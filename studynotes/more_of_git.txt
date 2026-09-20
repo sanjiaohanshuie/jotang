@@ -1,0 +1,12 @@
+创建ssh key  $ ssh-keygen -t rsa -C "youremail@example.com"
+查找 $ ls -ld .ssh
+切换磁盘根目录 $cd /d 可切换至任意权限允许的目录
+切换到用户主目录 $cd ~
+
+关联远程库$ git remote add origin(远程库指定名字) git@github.com:michaelliao(GitHub注册名字)/learngit.git
+将本地库推送到远程库 $ git push -u origin master
+提交远程库$ git push origin master
+删除远程库与本地的联系$ git remote rm origin
+查看远程库信息 $git remote -v
+克隆远程库 $git clone git@github.com:sanjiaohanshuie/gitskills.git
+          $git clone https://github.com/sanjiaohanshuie/gitskills.git

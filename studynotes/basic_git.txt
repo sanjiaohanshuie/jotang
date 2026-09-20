@@ -1,0 +1,35 @@
+$ mkdir learngit 新建文件夹
+$ cd learngit 更改路径
+$ pwd 查看当前路径
+$ git init 把文件夹初始化为一个仓库
+$ vi readme.txt 
+$ git add readme.txt
+$ git commit -m "wrote a readme file"
+
+ i 进入编辑模式 esc :wq 返回git
+
+ git三个区域：工作区 (vi)，暂存区(add)，仓库(commit) add和commit都是复制而非剪切
+
+ $ git status查看三个区的状态
+ $ git diff readme.txt 查看已经改动但没有add的文件
+ $ git log --pretty=oneline
+
+
+$ git reset --hard HEAD^ 回退到上个版本
+--hard会回退到上个版本的已提交状态，而--soft会回退到上个版本的未提交状态，--mixed会回退到上个版本已添加但未提交的状态。
+
+$ cat readme.txt 查看短小文件
+
+于是就可以指定回到未来的某个版本：
+$ git reset --hard 版本号前几位
+
+找不到新版本的commit id怎么办？Git提供了一个命令git reflog用来记录你的每一次命令 
+
+丢弃工作区的修改 $ git checkout -- readme.txt 但是工作区仍保留原文件,相当于用版本库中的版本替换工作区
+放入暂存区后丢弃修改 $ git reset HEAD <file> 撤回放入暂存区的操作
+
+$rm test.txt 工作区直接删除 
+工作区撤回修改 $git restore test.txt
+从版本库删除 $git rm test.txt         $git commit -m "remove test.txt"
+
+
